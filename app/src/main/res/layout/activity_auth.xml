@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#000A13"
-    tools:context=".MainActivity">
+    tools:context=".AuthActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,13 +14,13 @@
         android:fontFamily="@font/ubuntu_bold"
         android:textColor="#FFFFFF"
         android:layout_gravity="center"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="230dp"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:text="Create an account" />
+        android:text="Authorization" />
 
     <EditText
-        android:id="@+id/user_login"
+        android:id="@+id/user_login_auth"
         android:layout_width="270dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -31,20 +31,9 @@
         android:textColor="#BCBCBC"
         android:hint="Login" />
 
-    <EditText
-        android:id="@+id/user_email"
-        android:layout_width="270dp"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:textColorHint="#BCBCBC"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:textColor="#BCBCBC"
-        android:hint="Email" />
 
     <EditText
-        android:id="@+id/user_pass"
+        android:id="@+id/user_pass_auth"
         android:layout_width="270dp"
         android:layout_height="50dp"
         android:ems="10"
@@ -56,25 +45,26 @@
         android:hint="Password" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_auth"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:fontFamily="@font/ubuntu"
-        android:text="Sign In"
-        android:textSize="20dp"
-        android:backgroundTint="#94DB93"
         android:layout_marginTop="30dp"
+        android:backgroundTint="#94DB93"
+        android:fontFamily="@font/ubuntu"
         android:padding="15dp"
+        android:text="Sign Up"
+        android:textSize="20dp"
         android:textStyle="normal" />
+
     <TextView
-        android:id="@+id/lint_to_auth"
+        android:id="@+id/linkToReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/ubuntu"
-        android:text="Do you already have an account?"
+        android:text="You're not registered yet?"
         android:textColor="#FFFFFF"
         android:textSize="20dp" />
 
