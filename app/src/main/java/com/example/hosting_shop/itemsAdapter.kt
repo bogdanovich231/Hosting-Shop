@@ -1,11 +1,14 @@
 package com.example.hosting_shop
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class itemsAdapter(var items: List<Item>, var context: Context) : RecyclerView.Adapter<itemsAdapter.MyViewHolder>() {
@@ -31,6 +34,23 @@ class itemsAdapter(var items: List<Item>, var context: Context) : RecyclerView.A
       holder.title.text = items[position].title
       holder.city.text = items[position].city
       holder.weigh.text = items[position].weigh
-      holder.price.text = items[position].price.toString()
+      holder.price.text = "$" + items[position].price.toString()
+
+      var imageId = context.resources.getIdentifier(
+          items[position].image,
+          "drawable",
+          context.packageName
+      )
+      holder.image.setImageResource(imageId)
+        if (position % 2 == 1) {
+            val drawable: Drawable? = ContextCompat.getDrawable(context, R.drawable.rounded_background2)
+            val drawableImage: Drawable? = ContextCompat.getDrawable(context, R.drawable.image_background2)
+            holder.itemView.background = drawable
+            holder.image.background = drawableImage
+        } else {
+            val drawable: Drawable? = ContextCompat.getDrawable(context, R.drawable.rounded_background)
+
+            holder.itemView.background = drawable
+        }
     }
 }

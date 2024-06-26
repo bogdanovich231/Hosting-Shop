@@ -16,8 +16,9 @@ class ItemsActivity : AppCompatActivity() {
         items.add(Item(1, "mar1", "rating", "Alaskan", "Thunderfuck\n" + "Strain", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "10g /", 100))
         items.add(Item(2, "mar2", "rating", "Alaskan", "Thunderfuck\n" + "Strain", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "10g /", 100))
         items.add(Item(3, "mar3", "rating", "Alaskan", "Thunderfuck\n" + "Strain", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "10g /", 100))
-
-        itemsList.layoutManager = LinearLayoutManager(this)
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        itemsList.layoutManager = layoutManager
+//        itemsList.layoutManager = LinearLayoutManager(this)
         itemsList.adapter = itemsAdapter(items, this)
     }
 }
