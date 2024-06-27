@@ -17,8 +17,11 @@
         android:theme="@style/Theme.Hostingshop"
         tools:targetApi="31">
         <activity
+            android:name=".ItemActivity"
+            android:exported="true" />
+        <activity
             android:name=".ItemsActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".AuthActivity"
             android:exported="false" />

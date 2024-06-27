@@ -59,28 +59,40 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingVertical="2dp"
-        android:paddingHorizontal="20dp">
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="2dp">
 
         <TextView
             android:id="@+id/item_list_weigh"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="#4D8B7C"
-            android:textSize="17dp"
             android:layout_marginRight="5dp"
-            android:text="Weight" />
+            android:layout_weight="1"
+            android:text="Weight"
+            android:textColor="#4D8B7C"
+            android:textSize="17dp" />
 
         <TextView
             android:id="@+id/item_list_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/ubuntu"
+            android:text="Price"
             android:textColor="#4D8B7C"
-            android:textSize="17dp"
-            android:text="Price" />
+            android:textSize="17dp" />
+        <Button
+            android:id="@+id/button_to_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_to_item"
+            android:backgroundTint="@color/material_on_primary_disabled"
+            android:textColor="#4D8B7C"
+            android:textSize="15dp"
+            android:layout_marginLeft="5dp"
+            android:text="More..." />
     </LinearLayout>
+
+
 
 
 </LinearLayout>
