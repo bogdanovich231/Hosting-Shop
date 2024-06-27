@@ -10,15 +10,22 @@ class ItemsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_items)
 
-        val itemsList: RecyclerView = findViewById(R.id.itemsList)
-        val items =  arrayListOf<Item>()
+        val categoryList: RecyclerView = findViewById(R.id.categoryList)
+        val categories = listOf("Flowers", "Pre Rolls", "Seeds", "Edibles")
+        val categoryAdapter = CategoryAdapter(categories, this)
 
-        items.add(Item(1, "mar1", "rating", "Alaskan", "Thunderfuck\n" + "Strain", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "10g /", 100))
-        items.add(Item(2, "mar2", "rating", "Alaskan", "Thunderfuck\n" + "Strain", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "10g /", 100))
-        items.add(Item(3, "mar3", "rating", "Alaskan", "Thunderfuck\n" + "Strain", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "10g /", 100))
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        itemsList.layoutManager = layoutManager
-//        itemsList.layoutManager = LinearLayoutManager(this)
+        categoryList.layoutManager = layoutManager
+        categoryList.adapter = categoryAdapter
+
+        val itemsList: RecyclerView = findViewById(R.id.itemsList)
+        val items = mutableListOf<Item>()
+        items.add(Item(1, "mar1", "rating", "Alaskan", "Thunderfuck\n" + "Strain", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "10g /", 100))
+        items.add(Item(2, "mar2", "rating", "Alaskan", "Thunderfuck\n" + "Strain", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "10g /", 100))
+        items.add(Item(3, "mar3", "rating", "Alaskan", "Thunderfuck\n" + "Strain", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", "10g /", 100))
+
+        val itemsLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        itemsList.layoutManager = itemsLayoutManager
         itemsList.adapter = itemsAdapter(items, this)
     }
 }
